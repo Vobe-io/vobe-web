@@ -7,13 +7,13 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .\Caddyfile:/etc/caddy/Caddyfile
+      - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy-data:/data
       - caddy-config:/config
     ports:
     - '80:80'
+    - '443:443'
 
 volumes:
   caddy-data:
   caddy-config:
-
