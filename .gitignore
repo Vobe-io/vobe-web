@@ -22,3 +22,6 @@ yarn-error.log*
 
 .graphqlconfig
 /schema.graphql
+
+# other stuff
+package-lock.json
