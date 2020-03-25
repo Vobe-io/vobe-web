@@ -1,3 +1,13 @@
+vobe.io, www.vobe.io
+reverse_proxy 127.0.0.1:81
+
+
+
+api.vobe.io
+reverse_proxy 127.0.0.1:8080
+
+
+
 beta.vobe.io
 root * /usr/share/caddy
 try_files {path} /index.html
