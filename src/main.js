@@ -13,7 +13,7 @@ import {createHttpLink} from "apollo-link-http";
 
 
 const apolloClient = new ApolloClient({
-  uri: `http://${window.location.hostname}:4000/graphql`,
+  uri: window.location.hostname === ('localhost' || '127.0.0.1') ? `http://${window.location.hostname}:4000` : 'gql.vobe.io',
   fetchOptions: {
     link: new createHttpLink({
       credentials: 'include',
