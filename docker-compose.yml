@@ -8,12 +8,19 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./maintenance.html:/usr/share/caddy/maintenance.html
       - caddy-data:/data
       - caddy-config:/config
     ports:
     - '80:80'
     - '443:443'
+    networks:
+      - vobe
 
 volumes:
   caddy-data:
   caddy-config:
+
+networks:
+  vobe:
+    external: true

@@ -1,14 +1,24 @@
-vobe.io, www.vobe.io
-reverse_proxy 127.0.0.1:81
+#import this snippet to a site if you want that site to go into maintenance mode
+(maintenance) {
+    redir https://maintenance.vobe.io
+}
 
+vobe.io, www.vobe.io {
+    reverse_proxy vobe_web:80
+}
 
+api.vobe.io {
+    reverse_proxy vobe_node:8080
+}
 
-api.vobe.io
-reverse_proxy 127.0.0.1:8080
+maintenance.vobe.io {
+    root * /usr/share/caddy
+    rewrite * /maintenance.html
+    file_server
+}
 
-
-
-beta.vobe.io
-root * /usr/share/caddy
-try_files {path} /index.html
-file_server
+beta.vobe.io {
+    root * /usr/share/caddy
+    try_files {path} /index.html
+    file_server
+}
