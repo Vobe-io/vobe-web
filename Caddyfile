@@ -11,6 +11,10 @@ api.vobe.io {
     reverse_proxy vobe_node:8080
 }
 
+gql.vobe.io {
+    reverse_proxy vobe-gql:4000
+}
+
 maintenance.vobe.io {
     root * /usr/share/caddy/maintenance
     try_files {path} /index.html
