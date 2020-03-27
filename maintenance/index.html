@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Vobe - Maintenance</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <div id="center-box">
+        <div id="center">
+            <img src="vobe.svg" id="logo">
+            <h1 id="status-text">we are currently under maintenance</h1>
+
+            <div id="nav-items">
+                <a href="https://twitter.com/vobe_io">
+                    <img src="twitter.svg" id="icon">
+                </a>
+
+                <a href="https://discord.gg/4qw4CB5">
+                    <img src="discord.svg" id="icon">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<style>
+    #center-box {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #logo {
+        height: 150px;
+        margin-bottom: 40px;
+    }
+
+    #icon {
+        height: 30px;
+        margin: 5px;
+    }
+
+    #nav-itmes {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    span {
+        color: grey;
+    }
+
+    * {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        color: #1E2226
+    }
+</style>
+
+<script>
+    let strings = [
+        'vobe is currently under maintanance',
+        'we fucked up',
+        'fuck sorry',
+        'mom the servers crashed again',
+        'oh shit',
+        'shit, give us a sec',
+        'aaaaaaaa',
+        'bing bong the server is gone',
+        'fuck fuck fuck'
+    ];
+    document.getElementById('status-text').innerHTML = strings[Math.floor(Math.random() * strings.length)]
+</script>
+
+</html>

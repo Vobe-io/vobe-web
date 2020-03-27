@@ -12,8 +12,8 @@ api.vobe.io {
 }
 
 maintenance.vobe.io {
-    root * /usr/share/caddy
-    rewrite * /maintenance.html
+    root * /usr/share/caddy/maintenance
+    rewrite * /index.html
     file_server
 }
 

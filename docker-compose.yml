@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./maintenance.html:/usr/share/caddy/maintenance.html
+      - ./maintenance/:/usr/share/caddy/maintenance
       - caddy-data:/data
       - caddy-config:/config
     ports:
