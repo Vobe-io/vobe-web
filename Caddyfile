@@ -13,7 +13,7 @@ api.vobe.io {
 
 maintenance.vobe.io {
     root * /usr/share/caddy/maintenance
-    rewrite * /index.html
+    try_files {path} /index.html
     file_server
 }
 
