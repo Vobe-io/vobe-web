@@ -1,68 +1,63 @@
 <template>
-    <div id="login">
+    <div id="register">
+        <a id="register-bg-author" href="https://unsplash.com/@larrytwh">@larrytwh</a>
+        <parallax-image src="@/assets/wp/@jaymantri" id="register-bg"></parallax-image>
 
-        <a id="login-bg-author" href="https://unsplash.com/@larrytwh">@larrytwh</a>
-        <parallax-image src="@/assets/wp/@idoevolve" id="login-bg"></parallax-image>
-
-        <div id="login-cover">
-
-            <div id="login-form">
-                <div id="login-form-head">
-                    <img alt="Vobe-Logo" class='logo' src="@/assets/logo/vobe_logo.svg">
-                    <h1>Login</h1>
+        <div id="register-cover">
+            <div id="register-form">
+                <div id="register-form-head">
+                    <img alt="Vobe-Logo" class="logo" src="@/assets/logo/vobe_logo.svg">
+                    <h1>Register</h1>
                 </div>
-
-                <div id="login-inputs">
-                    <!-- IDENTITY -->
-                    <img alt="ID" class='text-icon' src="@/assets/icons/identity.svg">
-                    <input type="text" id="identity">
+                <div id="register-inputs">
+                    <!-- USERNAME -->
+                    <img alt="ID" class="text-icon" src="@/assets/icons/identity.svg">
+                    <input type="text" id="username">
+                    <!-- MAIL -->
+                    <img alt="MAIL" class="text-icon" src="@/assets/icons/mail.svg">
+                    <input type="email" id="email">
                     <!-- PASSWORD -->
-                    <img alt="PW" class='text-icon' src="@/assets/icons/key.svg">
+                    <img alt="PW" class="text-icon" src="@/assets/icons/key.svg">
                     <input type="password" id="password">
-
+                    <!-- PASSWORD CONFIRM -->
+                    <img alt="PWC" class="text-icon" src="@/assets/icons/key1.svg">
+                    <input type="password" id="password-c">
                 </div>
-
-                <div id="login-actions">
-                    <a href="">recover account</a>
-                    <vobe-button text="Login" :callback="login"/>
+                <div id="register-actions">
+                    <vobe-button text="Register" :callback="register" />
                 </div>
-
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import ParallaxImage from "@/components/ParallaxImage.vue";
-    import VobeButton from "@/components/VobeButton.vue";
+    import ParallaxImage from "@/components/ParallaxImage";
+    import VobeButton from "@/components/VobeButton";
     import gql from 'graphql-tag';
 
-
     export default {
-        name: "Login",
+        name: "Register",
         components: {VobeButton, ParallaxImage},
-        comments: {},
         methods: {
-            async login() {
+            async register() {
                 this.$apollo.query({
-                    query: gql`query signin($identity: String!, $password: String!){signin(identity: $identity, password: $password){token}}`,
+                    query: gql`query signup($username: String!, $email: String!, $password: String!){signup(username: $username, email: $email, password: $password){token}}`,
                     variables: {
-                        identity: document.getElementById('identity').value,
+                        username: document.getElementById('username').value,
+                        email: document.getElementById('email').value,
                         password: document.getElementById('password').value
                     }
-                }).then(res => {
-                    let session = res.data.signin.token;
-                    if (session !== undefined)
-                        this.$cookie.set('session-token', session, 60);
+                }).then(() => {
+                    alert('Please check your spam folder');
                 }).catch(err => alert(err));
             }
-        },
+        }
     }
 </script>
 
 <style scoped lang="scss">
-
-    #login-actions {
+    #register-actions {
         display: flex;
 
         justify-content: space-between;
@@ -93,7 +88,7 @@
         background-color: transparent;
     }
 
-    #login-inputs {
+    #register-inputs {
         margin-top: 50px;
         padding: 25px;
         display: grid;
@@ -104,10 +99,10 @@
         grid-template-areas: ". ." ". .";
     }
 
-    #login-form {
+    #register-form {
         height: 650px;
 
-        #login-form-head {
+        #register-form-head {
             display: flex;
             align-items: center;
 
@@ -123,10 +118,10 @@
     }
 
 
-    #login {
+    #register {
         width: 100%;
 
-        #login-bg {
+        #register-bg {
             z-index: -1;
             position: absolute;
             top: 0;
@@ -139,7 +134,7 @@
             }
         }
 
-        #login-cover {
+        #register-cover {
             z-index: 1;
             position: absolute;
             top: 0;
@@ -160,7 +155,7 @@
         }
     }
 
-    #login-bg-author {
+    #register-bg-author {
         z-index: 1000;
         text-decoration: none;
         position: absolute;
@@ -175,4 +170,5 @@
             opacity: 0.35;
         }
     }
+
 </style>
