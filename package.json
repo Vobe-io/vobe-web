@@ -11,7 +11,7 @@
     "apollo-boost": "^0.4.7",
     "apollo-link-http": "latest",
     "connect-history-api-fallback": "^1.6.0",
-    "core-js": "^3.6.4",
+    "core-js": "^3.6.5",
     "express": "latest",
     "gql-tag": "^1.0.1",
     "graphql": "^14.6.0",
