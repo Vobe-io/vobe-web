@@ -16,7 +16,7 @@
     "gql-tag": "^1.0.1",
     "graphql": "^14.7.0",
     "graphql-tag": "latest",
-    "http-server": "^0.12.1",
+    "http-server": "^0.12.3",
     "vue": "^2.6.11",
     "vue-apollo": "^3.0.3",
     "vue-cookie": "^1.1.4",
