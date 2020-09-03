@@ -17,7 +17,7 @@
     "graphql": "^14.7.0",
     "graphql-tag": "latest",
     "http-server": "^0.12.3",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-apollo": "^3.0.4",
     "vue-cookie": "^1.1.4",
     "vue-gql": "^0.2.3",
@@ -38,6 +38,6 @@
     "eslint-plugin-vue": "^6.1.2",
     "node-sass": "^4.14.1",
     "sass-loader": "^9.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   }
 }
