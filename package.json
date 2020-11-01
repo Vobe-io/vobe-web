@@ -23,7 +23,7 @@
     "vue-gql": "^0.2.3",
     "vue-kinesis": "^1.1.5",
     "vue-parallaxy": "^1.1.1",
-    "vue-router": "^3.4.5",
+    "vue-router": "^3.4.8",
     "vuex": "^3.5.1",
     "webpack": "^4.44.1"
   },
